@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+
+    <ranglerz.face.fun.widget.CameraPreview
+        android:id="@+id/camera_preview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+         />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/cm_icon"
+            android:onClick="onCaptureClick"
+            android:padding="@dimen/padding_medium" />
+
+        <ImageButton
+            android:id="@+id/buttonSwitchCamera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/cm_icon" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            
+            android:layout_below="@+id/buttonSwitchCamera"
+            android:layout_above="@id/button1"
+            android:contentDescription="@string/content_desc_overlay"
+            android:padding="70dp"
+            android:src="@drawable/ic_face_frame" />
+    </RelativeLayout>
+
+</FrameLayout>
+
+<!-- 
+
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <com.pyxel.oldi.ui.widget.CameraPreview
+        android:id="@+id/camera_preview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="800dp"
+        android:contentDescription="@string/content_desc_overlay"
+        android:src="@drawable/ic_face_frame" 
+        android:layout_gravity="center"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|bottom"
+        android:onClick="onCaptureClick"
+        android:padding="@dimen/padding_medium"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/cm_icon"
+         />
+
+    <ImageButton
+        android:id="@+id/buttonSwitchCamera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:src="@drawable/cm_icon"
+         />
+
+</FrameLayout>
+
+ -->

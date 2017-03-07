@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="315dp"
+    android:layout_height="130dp"
+    android:background="@color/dialog_color"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/mysignature"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/dialog_color"
+        android:gravity="center"
+        android:text="Buy Goggle"
+        android:textColor="@color/additional_text_color"
+        android:textSize="22sp" />
+
+    <LinearLayout
+		    android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="5dp"
+             
+        
+        
+             >
+
+           <Button
+               android:id="@+id/later_button"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_gravity="left"
+               android:layout_weight=".50"
+               
+               android:paddingBottom="10dp"
+               android:paddingLeft="10dp"
+               android:paddingRight="10dp"
+               android:paddingTop="10dp"
+               android:layout_margin="5dp"
+               android:text="Later"
+               android:textColor="@color/additional_text_color"
+               android:textSize="18sp" />
+
+           <Button
+               android:id="@+id/buy_button"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_gravity="left"
+               android:layout_weight=".50"
+               
+               android:paddingBottom="10dp"
+               android:paddingLeft="10dp"
+               android:paddingRight="10dp"
+               android:paddingTop="10dp"
+               android:layout_margin="5dp"
+               android:text="Buy"
+               android:textColor="@color/additional_text_color"
+               android:textSize="18sp" />
+
+		</LinearLayout>
+
+
+
+
+</LinearLayout>
+    
+

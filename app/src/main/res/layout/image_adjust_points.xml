@@ -1,0 +1,821 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true">
+
+    <RelativeLayout
+        android:id="@+id/drawing_relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/options_linearLayout"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="#000000">
+
+        <ranglerz.face.fun.FaceDrawingView
+            android:id="@+id/faceDrawingView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/img" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/options_linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/options_strip_1"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/upperBar_relativeLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+
+            >
+
+            <Button
+                android:id="@+id/back_Button"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/options_upper_back_btn"
+                android:onClick="Back"
+                android:paddingLeft="7dp"
+                android:text="Back"
+                android:textColor="#ffffff" />
+            <!-- <Button
+             android:id="@+id/retake_Button"
+             android:layout_width="140dp"
+             android:layout_height="40dp"
+             android:layout_centerInParent="true"
+             android:text="Retake Photo"
+             android:textColor="#ffffff"
+             android:onClick="RetakePhoto"
+             android:paddingLeft="3dp"
+             android:paddingRight="3dp"
+             android:background="@drawable/options_upper_retake_btn" />
+          -->
+            <SeekBar
+                android:id="@+id/saturation_seekbar"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:max="60"
+                android:padding="0dp"
+                android:value="60" />
+
+
+            <Button
+                android:id="@+id/save_Button"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/options_upper_save_btn"
+                android:onClick="SaveImage"
+                android:text="Save"
+                android:textColor="#ffffff" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/upperBar_relativeLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:gravity="center_vertical"
+
+                >
+
+                <ImageView
+                    android:id="@+id/rotateAntiClock_imageView"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/anticlockwise_icon"
+                    android:textColor="#ffffff" />
+
+                <ImageView
+                    android:id="@+id/rotateClock_imageView"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="7dp"
+                    android:background="@drawable/clockwise_icon"
+                    android:textColor="#ffffff" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="120dp"
+                android:layout_height="55dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/options_upper_retake_btn"
+                android:gravity="center_vertical">
+
+
+                <ImageView
+                    android:id="@+id/decreaseSize_imageView"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/decreasesize_icon"
+                    android:textColor="#ffffff" />
+
+                <ImageView
+                    android:id="@+id/increaseSize_imageView"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/increasesize_icon"
+                    android:textColor="#ffffff" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/undo_imageView"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/ic_action_undo"
+                    android:textColor="#ffffff" />
+
+                <ImageView
+                    android:id="@+id/redo_imageView"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/ic_action_redo"
+                    android:textColor="#ffffff" />
+
+                <ImageView
+                    android:id="@+id/done_imageView"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/done_icon"
+                    android:textColor="#ffffff" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <HorizontalScrollView
+            android:id="@+id/options_scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/options_strip_2">
+
+
+            <RelativeLayout
+                android:id="@+id/lowerBar_relativeLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:background="@drawable/options_strip_2"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/options_linearLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|center_horizontal">
+
+                    <Button
+                        android:id="@+id/buttonNext"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/landmark_ok_icon" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/options_linearLayout2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/imageViewAdjustFace"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/face_adjust" />
+
+                    <ImageView
+                        android:id="@+id/adjustSaturation_imageView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/face_adjust" />
+
+                    <ImageView
+                        android:id="@+id/imageViewClock20"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/age_20" />
+
+
+                    <ImageView
+                        android:id="@+id/imageViewClock40"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/age_40" />
+
+                    <ImageView
+                        android:id="@+id/imageViewClock60"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/age_60" />
+
+                    <ImageView
+                        android:id="@+id/imageViewClock80"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/age_80" />
+
+                    <ImageView
+                        android:id="@+id/dotsIcon_imageView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/spotsicon" />
+
+                    <ImageView
+                        android:id="@+id/baldIcon_imageView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/baldicon_1" />
+
+                    <ImageView
+                        android:id="@+id/glassesIcon_imageView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/glasses" />
+
+                    <ImageView
+                        android:id="@+id/beardIcon_imageView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/beardicon_4" />
+
+                    <ImageView
+                        android:id="@+id/hairIcon_imageView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/hair" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/options_linearLayout3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/glassesIcon1_imageView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/glassesicon_1" />
+
+                    <ImageView
+                        android:id="@+id/glassesIcon2_imageView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/glassesicon_2" />
+
+                    <ImageView
+                        android:id="@+id/glassesIcon3_imageView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/glassesicon_3" />
+
+                    <ImageView
+                        android:id="@+id/glassesIcon4_imageView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/glassesicon_4" />
+
+                    <ImageView
+                        android:id="@+id/glassesIcon5_imageView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/glassesicon_5" />
+
+                    <ImageView
+                        android:id="@+id/glassesIcon6_imageView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/glassesicon_6" />
+
+                    <ImageView
+                        android:id="@+id/glassesIcon7_imageView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/glassesicon_7"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:id="@+id/star_goggle_1"
+                        android:src="@drawable/stargoggle1ebought"/>
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:id="@+id/bought_2_icon"
+                        android:src="@drawable/bought_2_icon"/>
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:id="@+id/bought_3_icon"
+                        android:src="@drawable/bought_3_icon"/>
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:id="@+id/bought_4_icon"
+                        android:src="@drawable/bought_4_icon"/>
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:id="@+id/bought_5_icon"
+                        android:src="@drawable/bought_5_icon"/>
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:id="@+id/bought_6_icon"
+                        android:src="@drawable/bought_6_icon"/>
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:id="@+id/bought_7_icon"
+                        android:src="@drawable/bought_7_icon"/>
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:id="@+id/bought_8_icon"
+                        android:src="@drawable/bought_8_icon"/>
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:id="@+id/bought_9_icon"
+                        android:src="@drawable/bougt_9_icon"/>
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:id="@+id/bought_10_icon"
+                        android:src="@drawable/bought_10_icon"/>
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:id="@+id/bought_11_icon"
+                        android:src="@drawable/bought_11_icon"/>
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:id="@+id/bought_12_icon"
+                        android:src="@drawable/bought_12_icon"/>
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:id="@+id/bought_13_icon"
+                        android:src="@drawable/bought_13_icon"/>
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:id="@+id/bought_14_icon"
+                        android:src="@drawable/bought_14_icon"/>
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:id="@+id/bought_15_icon"
+                        android:src="@drawable/bought_15_icon"/>
+
+
+                    <ImageView
+                        android:id="@+id/glassesIcon8_imageView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/glassesicon_8" />
+
+                    <ImageView
+                        android:id="@+id/glassesIcon9_imageView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/glassesicon_8" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/options_linearLayout4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/beardIcon1_imageView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/beardicon_1" />
+
+                    <ImageView
+                        android:id="@+id/beardIcon2_imageView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/beardicon_2" />
+
+                    <ImageView
+                        android:id="@+id/beardIcon3_imageView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/beardicon_3" />
+
+                    <ImageView
+                        android:id="@+id/beardIcon4_imageView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/beardicon_4" />
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:id="@+id/beardIcon5_imageView"
+                        android:src="@drawable/beardicon_5"/>
+
+                    <ImageView
+                        android:id="@+id/for_sale_beard_icon_1"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/sale_icon_1" />
+
+                    <ImageView
+                        android:id="@+id/for_sale_beard_icon_2"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/sale_icon_2" />
+
+                    <ImageView
+                        android:id="@+id/for_sale_beard_icon_3"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/sale_icon_3" />
+
+                    <ImageView
+                        android:id="@+id/for_sale_beard_icon_4"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/sale_icon_4" />
+
+                    <ImageView
+                        android:id="@+id/for_sale_beard_icon_5"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/sale_icon_5" />
+
+                    <ImageView
+                        android:id="@+id/for_sale_beard_icon_6"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/sale_icon_6" />
+
+                    <ImageView
+                        android:id="@+id/for_sale_beard_icon_7"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/sale_icon_7" />
+
+                    <ImageView
+                        android:id="@+id/for_sale_beard_icon_8"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/sale_icon_8" />
+
+                    <ImageView
+                        android:id="@+id/for_sale_beard_icon_9"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/sale_icon_9" />
+
+                    <ImageView
+                        android:id="@+id/for_sale_beard_icon_10"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/sale_icon_10" />
+
+                    <ImageView
+                        android:id="@+id/for_sale_beard_icon_11"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/sale_icon_11" />
+
+                    <ImageView
+                        android:id="@+id/for_sale_beard_icon_12"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/sale_icon_12" />
+
+                    <ImageView
+                        android:id="@+id/for_sale_beard_icon_13"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/sale_icon_13" />
+
+                    <ImageView
+                        android:id="@+id/for_sale_beard_icon_14"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/sale_icon_14" />
+
+                    <ImageView
+                        android:id="@+id/for_sale_beard_icon_15"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/sale_icon_15" />
+
+                    <ImageView
+                        android:id="@+id/for_sale_beard_icon_16"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/sale_icon_16" />
+
+                    <ImageView
+                        android:id="@+id/for_sale_beard_icon_17"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/sale_icon_17" />
+
+                    <ImageView
+                        android:id="@+id/for_sale_beard_icon_18"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/sale_icon_18" />
+
+
+
+
+                    <ImageView
+                        android:id="@+id/beard_buy_more_imageView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/buy_more_beard" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/options_linearLayout5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/hairIcon1_imageView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/hairicon_1" />
+
+                    <ImageView
+                        android:id="@+id/hairIcon2_imageView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/hairicon_2" />
+
+                    <ImageView
+                        android:id="@+id/hairIcon3_imageView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/hairicon_3" />
+
+                    <ImageView
+                        android:id="@+id/hairIcon4_imageView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/hairicon_4" />
+
+                    <ImageView
+                        android:id="@+id/hairIcon5_imageView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/hairicon_5" />
+
+                    <ImageView
+                        android:id="@+id/hairIcon6_imageView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/hairicon_6" />
+                    <ImageView
+                        android:id="@+id/hairIcon7_imageView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/hairicon_7" />
+                    <ImageView
+                        android:id="@+id/hairIcon8_imageView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/hairicon_8" />
+                    <ImageView
+                        android:id="@+id/hairIcon9_imageView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/hairicon_9" />
+                    <ImageView
+                        android:id="@+id/hairIcon10_imageView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/hairicon_10" />
+                    <ImageView
+                        android:id="@+id/hairIcon11_imageView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/hairicon_11" />
+
+
+                    <ImageView
+                        android:id="@+id/bought_hire_icon_1"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/bought_hair_icon_1" />
+
+                    <ImageView
+                        android:id="@+id/bought_hire_icon_2"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/bought_hair_icon_2" />
+
+                    <ImageView
+                        android:id="@+id/bought_hire_icon_3"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/bought_hair_icon_3" />
+
+                    <ImageView
+                        android:id="@+id/bought_hire_icon_4"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/bought_hair_icon_4" />
+
+                    <ImageView
+                        android:id="@+id/bought_hire_icon_5"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/bought_hair_icon_5" />
+
+                    <ImageView
+                        android:id="@+id/bought_hire_icon_6"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/bought_hair_icon_6" />
+
+                    <ImageView
+                        android:id="@+id/bought_hire_icon_7"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/bought_hair_icon_7" />
+
+                    <ImageView
+                        android:id="@+id/bought_hire_icon_8"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/bought_hair_icon_8" />
+
+                    <ImageView
+                        android:id="@+id/bought_hire_icon_9"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/bought_hair_icon_9" />
+
+                    <ImageView
+                        android:id="@+id/bought_hire_icon_10"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/bought_hair_icon_10" />
+
+                    <ImageView
+                        android:id="@+id/bought_hire_icon_11"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/bought_hair_icon_11" />
+
+                    <ImageView
+                        android:id="@+id/bought_hire_icon_12"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/bought_hair_icon_12" />
+
+                    <ImageView
+                        android:id="@+id/bought_hire_icon_13"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/bought_hair_icon_13" />
+
+                    <ImageView
+                        android:id="@+id/bought_hire_icon_14"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/bought_hair_icon_14" />
+
+                    <ImageView
+                        android:id="@+id/bought_hire_icon_15"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/bought_hair_icon_15" />
+
+                    <ImageView
+                        android:id="@+id/bought_hire_icon_16"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/bought_hair_icon_16" />
+
+
+
+                    <ImageView
+                        android:id="@+id/hairIcon12_imageView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/buy_more_hair" />
+
+
+
+
+
+
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/options_linearLayout6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/baldIcon1_imageView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/baldicon_1" />
+
+                    <ImageView
+                        android:id="@+id/baldIcon2_imageView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/baldicon_2" />
+
+                    <ImageView
+                        android:id="@+id/baldIcon3_imageView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/baldicon_3" />
+
+                    <ImageView
+                        android:id="@+id/baldIcon4_imageView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/baldicon_4" />
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/options_relativeLayout7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="115dp"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </HorizontalScrollView>
+    </LinearLayout>
+
+</RelativeLayout>
+
+
+    <!--   -->

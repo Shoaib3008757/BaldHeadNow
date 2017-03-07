@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffff">
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/glases_for_sell_linear_layout"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:layout_width="340dp"
+            android:layout_height="350dp"
+            android:id="@+id/for_sell_glass1"
+            android:src="@drawable/for_sele1" />
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:id="@+id/for_sell_glass2"
+            android:src="@drawable/for_sele2"
+            android:layout_weight="1"/>
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:id="@+id/for_sell_glass3"
+            android:src="@drawable/for_sele3"
+            android:layout_weight="1"/>
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:id="@+id/for_sell_glass4"
+            android:src="@drawable/for_sele4"
+            android:layout_weight="1"/>
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:id="@+id/for_sell_glass5"
+            android:src="@drawable/for_sele5"
+            android:layout_weight="1"/>
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:id="@+id/for_sell_glass6"
+            android:src="@drawable/for_sele16"
+            android:layout_weight="1"/>
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:id="@+id/for_sell_glass8"
+            android:src="@drawable/for_sele8"
+            android:layout_weight="1"/>
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:id="@+id/for_sell_glass9"
+            android:src="@drawable/for_sele9"
+            android:layout_weight="1"/>
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:id="@+id/for_sell_glass10"
+            android:src="@drawable/for_sele10"
+            android:layout_weight="1"/>
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:id="@+id/for_sell_glass11"
+            android:src="@drawable/for_sele11"
+            android:layout_weight="1"/>
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:id="@+id/for_sell_glass12"
+            android:src="@drawable/for_sele12"
+            android:layout_weight="1"/>
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:id="@+id/for_sell_glass13"
+            android:src="@drawable/for_sele13"
+            android:layout_weight="1"/>
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:id="@+id/for_sell_glass14"
+            android:src="@drawable/for_sele14"
+            android:layout_weight="1"/>
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:id="@+id/for_sell_glass15"
+            android:src="@drawable/for_sele15"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:id="@+id/for_sell_glass7"
+            android:src="@drawable/for_sele7"
+            android:layout_weight="1"/>
+
+
+
+    </LinearLayout>
+
+
+</HorizontalScrollView>

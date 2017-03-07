@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffff">
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/beard_for_sell_linear_layout"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:layout_width="340dp"
+            android:layout_height="350dp"
+            android:id="@+id/for_sell_beard1"
+            android:src="@drawable/sale_image_1" />
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:id="@+id/for_sell_beard2"
+            android:src="@drawable/sale_image_2"
+            android:layout_weight="1"/>
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:id="@+id/for_sell_beard3"
+            android:src="@drawable/sale_image_3"
+            android:layout_weight="1"/>
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:id="@+id/for_sell_beard4"
+            android:src="@drawable/sale_image_4"
+            android:layout_weight="1"/>
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:id="@+id/for_sall_beard5"
+            android:src="@drawable/sale_image_5"
+            android:layout_weight="1"/>
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:id="@+id/for_sell_beard6"
+            android:src="@drawable/sale_image_6"
+            android:layout_weight="1"/>
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:id="@+id/for_sell_beard7"
+            android:src="@drawable/sale_image_7"
+            android:layout_weight="1"/>
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:id="@+id/for_sell_beard8"
+            android:src="@drawable/sale_image_8"
+            android:layout_weight="1"/>
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:id="@+id/for_sell_beard9"
+            android:src="@drawable/sale_image_9"
+            android:layout_weight="1"/>
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:id="@+id/for_sell_beard10"
+            android:src="@drawable/sale_image_10"
+            android:layout_weight="1"/>
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:id="@+id/for_sell_beard11"
+            android:src="@drawable/sale_image_11"
+            android:layout_weight="1"/>
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:id="@+id/for_sell_beard12"
+            android:src="@drawable/sale_image_12"
+            android:layout_weight="1"/>
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:id="@+id/for_sell_beard13"
+            android:src="@drawable/sale_image_13"
+            android:layout_weight="1"/>
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:id="@+id/for_sell_beard14"
+            android:src="@drawable/sale_image_14"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:id="@+id/for_sell_beard15"
+            android:src="@drawable/sale_image_15"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:id="@+id/for_sell_beard16"
+            android:src="@drawable/sale_image_16"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:id="@+id/for_sell_beard17"
+            android:src="@drawable/sale_image_17"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:id="@+id/for_sell_beard18"
+            android:src="@drawable/sale_image_18"
+            android:layout_weight="1"/>
+
+
+
+    </LinearLayout>
+
+
+</HorizontalScrollView>

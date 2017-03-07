@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Face Fun</string>
+    <string name="title_activity_main">Face Fun</string>
+    <string name="button_use_camera">Take Picture</string>
+    <string name="title_activity_camera">CameraActivity</string>
+    <string name="button_capture_text">Take Picture</string>
+    <string name="content_desc_overlay">overlay</string>
+    <string name="content_desc_image_just_taken">Image just taken</string>
+    <string name="take_picture">Take Picture</string>
+    <string name="title_activity_after">AfterActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_drawing">DrawingActivity</string>
+    <string name="title_activity_store">StoreActivity</string>
+
+  <!--  <string name="banner_ad_id" translatable="false">ca-app-pub-2735690748218549/7226251317</string>-->
+
+</resources>
